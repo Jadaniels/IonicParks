@@ -8,42 +8,51 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'parks',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../park-list/park-list.module#ParkListPageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'map',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../park-map/park-map.module#ParkMapPageModule'
           }
         ]
       },
       {
-        path: 'tab3',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
-          }
-        ]
+        path: 'details/:id', // edit the path name
+         children: [
+         {
+          path: '',
+          loadChildren: '../park-details/park-details.module#ParkDetailsPageModule'
+         }]
       },
+      
+      // {
+      //   path: 'tab3',
+      //   children: [
+      //     {
+      //       path: '',
+      //       loadChildren: '../tab3/tab3.module#Tab3PageModule'
+      //     }
+      //   ]
+      // },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/parks',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/parks',
     pathMatch: 'full'
   }
 ];
