@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ParkListPage implements OnInit {
 
-parks: Array<park> = []
+parks: Array<ParkData> = []
 searchQuery: string ='';
 
   //parks: Array<Object> = []

@@ -46,8 +46,8 @@ getFilteredParks(queryString){
 
 resetList(event){
     //reset items back to all the items
-    this.parkData.getParks().then(theResult =>{
-        this.parks = theResult;
+   this.data.getParks().then(theResult =>{
+        this.data = theResult;
     })
 }
 
